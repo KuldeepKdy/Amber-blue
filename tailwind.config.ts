@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+import lineclamp from "@tailwindcss/line-clamp";
+import scrollbar from "tailwind-scrollbar";
+
 export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,11 +11,10 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      screens: {
+        "3xl": "1600px",
       },
     },
   },
-  plugins: [],
+  plugins: [lineclamp, scrollbar],
 } satisfies Config;
